@@ -1,0 +1,100 @@
+/* position images */
+.image-absolute {
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    height: 80px;
+}
+.image-wraper {
+    position: relative;
+    display: inline-block;
+}
+
+/* center */
+.box-parent {
+    width: 600px;
+    height: 600px;
+    background-color: lightblue;
+    position: relative;
+
+    /* transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    transition-delay: 2s; */
+    transition: all 0.5s linear 2s;
+}
+.box-child {
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(45deg) scaleX(2);
+    transition: all 3s ease-in;
+}
+.hello {
+    color: blue;
+    font-size: 35px;
+    display: inline-block;
+    background-color: yellow;
+    padding: 15px;
+}
+
+/* hover effect */
+.box-parent:hover {
+    background-color: darkcyan; 
+}
+.box-child:hover {
+    background-color: red;
+    transform: translate(-50%,-50%) rotate(0deg) scaleX(4);
+}
+.hello:hover {
+    color: red;
+    cursor: pointer;
+}
+/* .box-parent:hover .box-child {
+    background-color: yellow;
+    height: 250px;
+} */
+
+/* keyframe image - example */
+.image-car {
+    height: 100px;
+    /* animation-name: caranimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-delay: 4s;
+    animation-direction: alternate; */
+    animation: caranimation 5s alternate 4s  infinite ease-out;
+    /* position: absolute; */
+}
+.car-move {
+    /* position: relative; */
+    height: 150px;
+    margin-top:100px;
+}
+.box-rotate {
+    width: 100px;
+    height: 100px;
+    animation: boxanimation 4s infinite;
+}
+
+@keyframes boxanimation {
+    0% {transform: rotate(0deg);background-color: blue;}
+    25% {transform: rotate(45deg);background-color: red;}
+    50% {transform: rotate(360deg);background-color: yellow;}
+    75% {transform: rotate(45deg);background-color: green;}
+    100% {transform: rotate(0deg);background-color: pink;}
+}
+
+
+
+/* @keyframes caranimation {
+    from {left: 0}
+    to {left: 80%}
+} */
+@keyframes caranimation {
+    from {transform: translateX(0);}
+    to {transform: translateX(1000px);}
+}
